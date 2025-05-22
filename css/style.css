@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+}
+.navegacao{
+    background-color: #23252b;
+    display: flex;
+    padding-left: 100px;
+}
+.navega{
+    display: flex;
+}
+.navega a{
+    padding: 16px;
+}
+.navega a:hover{
+    background-color: #141519;
+}
+.menu a:hover{
+    background-color: #141519;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+.menu{
+    display: flex;
+}
+.menu a{
+    padding: 16px;
+}
+
+.icon img{
+    margin-top: 16px;
+
+}
