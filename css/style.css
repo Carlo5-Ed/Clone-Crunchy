@@ -14,16 +14,16 @@ body{
 .navega{
     display: flex;
 }
-.navega a{
+.navega a, .menu a{
     padding: 16px;
+}
+.menu:hover{
+    background-color: #141519;
 }
 .navega a:hover{
     background-color: #141519;
 }
-.menu a:hover{
-    background-color: #141519;
-}
-.menu-2 a:hover{
+.menu-lista a:hover, .menu-lista-2 a:hover{
     background-color: #23252b;
 }
 a{
@@ -34,20 +34,19 @@ a{
 .menu{
     display: flex;
 }
-.menu a{
-    padding: 16px;
-}
 .icon img{
     margin-top: 16px;
 }
 .menu-2{
     background-color: #141519;
-    display: block;
+    display: flex;
     inset-block-start: 50px;
     position: fixed;
     transform: translate(0);
     margin-left: 313px;
     padding-top: 15px;
+    z-index: 10;
+
 }
 .menu-3{
     display: grid;
@@ -60,6 +59,9 @@ a{
     display: flex;
     flex: 1;
     flex-direction: column;
+}
+ul{
+    padding: 0;
 }
 .text{
     align-items: center;
