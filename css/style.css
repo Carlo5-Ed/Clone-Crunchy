@@ -1,105 +1,152 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    background-color: black;
-}
-.navegacao{
-    background-color: #23252b;
-    display: flex;
-    padding-left: 100px;
-}
-.navega{
-    display: flex;
-}
-.navega a, .menu a{
-    padding: 16px;
-}
-.menu:hover{
-    background-color: #141519;
-}
-.navega a:hover{
-    background-color: #141519;
-}
-.menu-lista a:hover, .menu-lista-2 a:hover{
-    background-color: #23252b;
-}
-a{
-    text-decoration: none;
-    padding: 10px;
+body {
+    background-color: #000;
     color: white;
 }
-.menu{
+.navegacao {
+    background-color: #23252b;
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
-.icon img{
-    margin-top: 16px;
-}
-.menu-2{
-    background-color: #141519;
+.navega-container,
+.menu-categorias-container,
+.menu-noticias-container {
     display: flex;
-    inset-block-start: 50px;
-    position: fixed;
-    transform: translate(0);
-    margin-left: 313px;
-    padding-top: 15px;
-    z-index: 10;
-
-}
-.menu-3{
-    display: grid;
-    grid-template-columns: 13.75rem 1fr;
-}
-.menu-lista{
-    display: flex;
-}
-.colunas{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-ul{
-    padding: 0;
-}
-.text{
     align-items: center;
-    color: #f8f8f8;
-    display: flex;
-    padding: .75rem 1rem;
     position: relative;
 }
-.colunas li{
+
+.navega-container a,
+.menu-categorias-container a,
+.menu-noticias-container a {
+    padding: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navega-container a:hover,
+.menu-categorias-container:hover,
+.menu-noticias-container:hover {
+    background-color: #141519;
+    cursor: pointer;
+}
+.menu-lista a:hover,
+.menu-categorias-dropdown a:hover,
+.menu-noticias-dropdown a:hover {
+    background-color: #2e3038;
+}
+a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #f1c40f; /* aqui é apenas uma transição de cor nas tags a com o hover*/
+}
+.icon img {
+    margin-top: 16px;
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+.menu-categorias-container:hover .icon img,
+.menu-noticias-container:hover .icon img {
+    transform: rotate(180deg);
+}
+.menu-categorias-dropdown,
+.menu-noticias-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141519;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+    animation: fadeIn 0.3s ease forwards;
+}
+.menu-categorias-container:hover .menu-categorias-dropdown,
+.menu-noticias-container:hover .menu-noticias-dropdown {
+    display: block;
+}
+
+@keyframes fadeIn { /*isso aqui é um efeito que desliza para baixo, nos menus onde coloquei em categorias e noticias você pode ver, movimento para baixo*/
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.menu-categorias {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    padding: 15px;
+}
+.menu-lista {
+    display: flex;
+    flex-direction: column;
+}
+.colunas li {
     list-style: none;
 }
-.borda{
-    border-inline-start: .125rem solid #23252b;
+.text {
+    display: flex;
+    align-items: center;
+    padding: .75rem 1rem;
 }
-.titulo{
+.borda {
+    border-left: 2px solid #23252b;
+}
+.titulo {
     color: #a0a0a0;
-    display: block;
-    padding: .8125rem 1rem;
+    padding: .8rem 1rem;
     text-transform: uppercase;
     font-size: .75rem;
 }
-.menu-lista-2{
-    grid-column-gap: 1.25rem;
+.menu-lista-2 {
     display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(5, 1fr);
-    grid-auto-columns: minmax(0, 12.5rem);
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(6, auto);
+    gap: 12 20px;
     width: 100%;
+    padding: 10px;
 }
-.sub-menu{
+.sub-menu {
     list-style-type: none;
 }
-.texto{
+.texto {
     font-size: .875rem;
 }
-.item{
+.item {
     color: #dadada;
     display: block;
-    padding: .75rem 1rem;
-    position: relative;
+    padding: 0.75rem 1.2rem; /* esse krl aqui é pra espaço lateral*/
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.item:hover {
+    background-color: #2e3038;
+}
+.menu-sequencia {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: repeat(1, minmax(200px, 1fr)); /*aqui é pra definição de colunas*/
+    grid-auto-rows: auto;
+    gap: 12px 20px;
+    padding: 15px;
+    width: 100%;
+}
+.menu-noticias-container nav{
+    width: 300px;
+}
+@media (max-width: 768px) { /*isso aqui é para responsividade, até 768px de largura, celulares e em tablets também*/
+    .navegacao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-categorias,
+    .menu-lista-2 {
+        grid-template-columns: 1fr;
+    }
 }
