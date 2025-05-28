@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Confirmação de Idade</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="modal-overlay" id="ageModal">
+            <div class="modal-content">
+                <h1>Este é um site adulto</h1>
+                <p>
+                    Este site contém material com restrições de idade, incluindo
+                    nudez e representações explícitas de atividade sexual. Ao se
+                    registrar, você afirma que tem pelo menos 18 anos de idade
+                    ou a maioridade na jurisdição de onde está acessando o site
+                    e que consente em visualizar conteúdo sexualmente explícito.
+                </p>
+                <button class="btn btn-enter" onclick="enterSite()">
+                    Tenho 18 anos ou mais - Entrar
+                </button>
+                <button class="btn btn-exit" onclick="leaveSite()">
+                    Tenho menos de 18 anos - Sair
+                </button>
+                <p class="footer">
+                    A nossa <a href="#">página de controlo parental</a> explica
+                    como pode bloquear facilmente o acesso a este sítio.
+                </p>
+                <p class="footer">
+                    © GeekHub.com, 2025 <br />
+                    RTA
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function enterSite() {
+                /*document.getElementById("ageModal").style.display = "none";*/
+                window.location.href = "index.html";
+            }
+
+            function leaveSite() {
+                window.location.href = "https://www.google.com";
+            }
+        </script>
+    </body>
+</html>
