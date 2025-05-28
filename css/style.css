@@ -232,3 +232,99 @@ body {
     margin-top: 10px;
     color: #aaa;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://source.unsplash.com/random/1920x1080?abstract,dark");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.5);
+    z-index: -1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #000;
+    color: #fff;
+    padding: 30px;
+    max-width: 420px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 153, 0, 0.5);
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-content h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-enter {
+    background-color: #ff9900;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-exit {
+    background-color: #333;
+    color: #fff;
+}
+
+.modal-content a {
+    color: orange;
+    text-decoration: none;
+}
+
+.footer {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
+}
