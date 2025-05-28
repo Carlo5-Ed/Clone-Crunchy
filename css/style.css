@@ -201,6 +201,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Botões */
 .btn {
     display: block;
     width: 100%;
@@ -210,16 +211,28 @@ body {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-enter {
     background-color: #ff9900;
     color: #000;
+    font-weight: bold;
+}
+
+.btn-enter:hover {
+    background-color: #e68a00;
+    box-shadow: 0 0 10px #ff9900;
 }
 
 .btn-exit {
     background-color: #333;
     color: #fff;
+}
+
+.btn-exit:hover {
+    background-color: #555;
+    box-shadow: 0 0 10px #888;
 }
 
 .modal-content a {
@@ -252,10 +265,10 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("https://source.unsplash.com/random/1920x1080?abstract,dark");
+    background-image: url("https://img1.ak.crunchyroll.com/i/spire4/91c6c88bc9759a2f87dae9a93387e0e51746049883_main.png");
     background-size: cover;
     background-position: center;
-    filter: blur(10px) brightness(0.5);
+    filter: blur(10px) brightness(2.5);
     z-index: -1;
 }
 
