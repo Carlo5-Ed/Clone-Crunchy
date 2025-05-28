@@ -200,8 +200,6 @@ body {
     line-height: 1.5;
     margin-bottom: 20px;
 }
-
-/* Botões */
 .btn {
     display: block;
     width: 100%;
@@ -257,8 +255,7 @@ html {
     height: 100%;
     font-family: Arial, sans-serif;
 }
-
-body::before {
+.fundo-pop_up::before {
     content: "";
     position: fixed;
     top: 0;
@@ -325,17 +322,14 @@ body::before {
     color: #000;
     font-weight: bold;
 }
-
 .btn-exit {
     background-color: #333;
     color: #fff;
 }
-
 .modal-content a {
     color: orange;
     text-decoration: none;
 }
-
 .footer {
     font-size: 12px;
     margin-top: 10px;
