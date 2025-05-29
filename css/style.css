@@ -8,6 +8,11 @@ body {
     background-color: #000;
     color: white;
 }
+img {
+    width: 40%;
+    border-radius: 5px black;
+    background-image: black;
+}
 .navegacao {
     background-color: #23252b;
     display: flex;
@@ -21,7 +26,6 @@ body {
     align-items: center;
     position: relative;
 }
-
 .navega-container a,
 .menu-categorias-container a,
 .menu-noticias-container a {
