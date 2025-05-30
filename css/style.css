@@ -13,6 +13,18 @@ img {
     border-radius: 5px black;
     background-image: black;
 }
+.logCab {
+    display: flex;
+    align-items: center;
+    /*padding-right: 20px; /* espaço entre logo e os menus */
+}
+
+.logCab img {
+    width: 30%; /* Tamanho pequeno da logo */
+    height: auto;
+    object-fit: contain;
+}
+
 .navegacao {
     background-color: #23252b;
     display: flex;
@@ -261,7 +273,7 @@ html {
     font-family: Arial, sans-serif;
 }
 
-body::before {
+.fundo-pop_up::before {
     content: "";
     position: fixed;
     top: 0;
