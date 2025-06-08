@@ -16,20 +16,25 @@ img {
 .logCab {
     display: flex;
     align-items: center;
-    /*padding-right: 20px; /* espaço entre logo e os menus */
 }
 
 .logCab img {
-    width: 30%; /* Tamanho pequeno da logo */
+    width: 120px; /* ajuste para o tamanho logo */
     height: auto;
-    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+}
+
+.logCab:hover img {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .navegacao {
-    background-color: #23252b;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    align-items: center;
+    gap: 15px; /* distância entre logo e os grupos do menu pra nao ficar esquisito */
+    padding: 10px 20px; /* padding interno para espaçamento geral pra padronizar essa bgç */
+    background-color: #23252b;
 }
 .navega-container,
 .menu-categorias-container,
@@ -37,12 +42,23 @@ img {
     display: flex;
     align-items: center;
     position: relative;
+    gap: 10px;
 }
 .navega-container a,
 .menu-categorias-container a,
 .menu-noticias-container a {
     padding: 16px;
+    white-space: nowrap; /* para os links não quebrarem em linhas nessa bagaça */
     transition: background-color 0.3s ease;
+}
+
+/* Para reduzir margens/paddings que possam afastar demais */
+.logCab,
+.navega-container,
+.menu-categorias-container,
+.menu-noticias-container {
+    margin: 0;
+    padding: 0;
 }
 
 .navega-container a:hover,
@@ -352,7 +368,77 @@ body::before {
 }
 
 .footer {
-    font-size: 12px;
+    background-color: #1a1c1f;
+    font-size: 14px;
     margin-top: 10px;
     color: #aaa;
+    padding: 2rem 1rem;
+}
+.container-2 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-top {
+    border-bottom: 1px solid #222;
+    padding-bottom: 2rem;
+}
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.list li {
+    margin-bottom: 0.5rem;
+}
+.list a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.list a:hover {
+    color: #fff;
+}
+.footer-sequencia {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+.footer-coluna {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.footer-segue {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+.footer-coluna h2 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 12px;
+}
+.social i {
+    margin-right: 0.5rem;
+}
+.footer-bottom {
+    flex-direction: column;
+    gap: 0.5;
+    align-items: flex-start;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1c1f;
+    color: #aaa;
+    padding: 1rem;
+    z-index: 100;
 }
