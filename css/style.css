@@ -29,6 +29,67 @@ img {
     filter: invert(1) hue-rotate(180deg);
 }
 
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do ícone hamburguer */
+.hamburger {
+    display: none; /* só aparece em telas pequenas */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+.hamburger:hover {
+    color: #f1c40f; /* cor do texto muda para amarelo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-itens {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Esconder menu e mostrar hamburger em telas pequenas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu-itens {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #23252b;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    /* Quando checkbox estiver marcado, mostrar menu */
+    #menu-toggle:checked + .hamburger + .menu-itens {
+        display: flex;
+    }
+
+    /* Links do menu no mobile, maior clique */
+    .navega-container a,
+    .menu-categorias-container > a.text,
+    .menu-noticias-container > a.text {
+        padding: 12px 20px;
+        width: 100%;
+        display: block;
+    }
+}
+.menu-itens a:hover {
+    background-color: #141519; /* cor de fundo escura ao passar o mouse */
+    color: #f1c40f; /* cor do texto muda para amarelo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .navegacao {
     display: flex;
     align-items: center;
@@ -365,6 +426,12 @@ body::before {
 .modal-content a {
     color: orange;
     text-decoration: none;
+}
+
+.footer {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
 }
 
 .footer {
